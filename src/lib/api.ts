@@ -2,6 +2,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+import { Post } from "@/interfaces/post"; // <-- Import our new Post type
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -15,10 +16,11 @@ export function getPostBySlug(slug: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  return { ...data, slug: realSlug, content } as Record<string, any>;
+  // We now confidently say the return type is 'Post'
+  return { ...data, slug: realSlug, content } as Post;
 }
 
-export function getAllPosts() {
+export function getAllPosts(): Post[] { // <-- Use Post[] here
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
