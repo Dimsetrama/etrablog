@@ -1,7 +1,9 @@
-import { Footer } from "@/app/_components/footer";
+import Footer from "@/app/_components/footer";
+import { ThemeSwitcher } from "./_components/theme-switcher";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
+
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -9,7 +11,14 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Etrama | Thrives on Neglect",
   description: "In order to shit fire, one must first chew glass.",
-  //... your other metadata
+  openGraph: {
+    images: ["/assets/og-image.png"],
+  },
+  icons: {
+    icon: "/favicon/favicon-32x32.png",
+    shortcut: "/favicon/favicon.ico",
+    apple: "/favicon/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

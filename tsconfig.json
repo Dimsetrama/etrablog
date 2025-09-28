@@ -21,7 +21,6 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".", // <-- THIS IS THE CRITICAL FIX
     "paths": {
       "@/*": [
         "./src/*"

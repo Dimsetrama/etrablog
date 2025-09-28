@@ -1,13 +1,14 @@
 import { Metadata } from "next";
-import Link from "next/link";
+import Link from "next/link"; // Make sure this is imported
+import { AnimatedLink } from "@/app/_components/animated-link";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
+import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
-import Container from "../../_components/container"; // Corrected path
-import Header from "../../_components/header"; // Corrected path
-import { PostBody } from "../../_components/post-body"; // Corrected path
-import { PostHeader } from "../../_components/post-header"; // Corrected path
-import { type Post } from "@/interfaces/post";
+import Container from "@/app/_components/container";
+import Header from "@/app/_components/header";
+import { PostBody } from "@/app/_components/post-body";
+import { PostHeader } from "@/app/_components/post-header";
 
 type Props = {
   params: {
@@ -16,7 +17,7 @@ type Props = {
 };
 
 export default async function Post({ params }: Props) {
-  const post: Post = getPostBySlug(params.slug);
+  const post = getPostBySlug(params.slug);
 
   if (!post) {
     return notFound();
@@ -37,34 +38,36 @@ export default async function Post({ params }: Props) {
             imageCaption={post.imageCaption}
           />
           <PostBody content={content} />
+          {/* --- PREVIOUS / NEXT POST NAVIGATION --- */}
           {(post.previousPost || post.nextPost) && (
             <div className="max-w-2xl mx-auto mt-12 flex justify-between">
               <div>
                 {post.previousPost && (
-                  <Link
+                  <AnimatedLink
                     href={`/posts/${post.previousPost}`}
                     className="inline-block bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-7 lg:px-8 duration-200 transition-colors"
                   >
                     &larr; Previous Part
-                  </Link>
+                  </AnimatedLink>
                 )}
               </div>
               <div>
                 {post.nextPost && (
-                  <Link
+                  <AnimatedLink
                     href={`/posts/${post.nextPost}`}
                     className="inline-block bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-7 lg:px-8 duration-200 transition-colors"
                   >
                     Next Part &rarr;
-                  </Link>
+                  </AnimatedLink>
                 )}
               </div>
             </div>
           )}
+          {/* --- END OF NAVIGATION --- */}
         </article>
       </Container>
     </main>
   );
 }
 
-// ... The rest of your file (generateMetadata, etc.) does not need to change.
+// ... rest of the file (generateMetadata, etc.) stays the same

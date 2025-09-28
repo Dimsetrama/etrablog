@@ -1,8 +1,7 @@
-// src/lib/api.ts
+import { Post } from "@/interfaces/post";
 import fs from "fs";
-import { join } from "path";
 import matter from "gray-matter";
-import { Post } from "@/interfaces/post"; // <-- Import our new Post type
+import { join } from "path";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -10,17 +9,32 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
+// REPLACE YOUR EXISTING getPostBySlug FUNCTION WITH THIS ONE
 export function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  // We now confidently say the return type is 'Post'
-  return { ...data, slug: realSlug, content } as Post;
+  const post: Post = {
+    slug: realSlug,
+    content,
+    title: data.title,
+    excerpt: data.excerpt,
+    date: data.date,
+    coverImage: data.coverImage,
+    imageCaption: data.imageCaption || null, // <-- ADDED THIS LINE
+    author: data.author,
+    ogImage: data.ogImage,
+    nextPost: data.nextPost || null,
+    previousPost: data.previousPost || null,
+  };
+
+  return post;
 }
 
-export function getAllPosts(): Post[] { // <-- Use Post[] here
+// REPLACE YOUR EXISTING getAllPosts FUNCTION WITH THIS ONE
+export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { type Author } from "@/interfaces/post";
+import { type Author } from "@/interfaces/author";
 import Avatar from "./avatar";
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
@@ -28,7 +28,7 @@ export function PostPreview({
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
         <Link
-          href={`/posts/${slug}`}
+          href={slug.startsWith("/") ? slug : `/posts/${slug}`}
           className="hover:underline"
         >
           {title}
@@ -42,3 +42,5 @@ export function PostPreview({
     </div>
   );
 }
+
+export default PostPreview;
