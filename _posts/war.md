@@ -1,6 +1,6 @@
 ---
 title: "Part II: The Blade"
-excerpt: "The white, silent light of the coliseum shattered behind him, and he fell forward into mud and chaos. The air, once still and sterile, was now thick with the coppery tang of blood and the guttural roar of unending battle."
+excerpt: "You looked in the mirror and you despised what you saw, so you pretended the mirror was a window, and that the monster was on the other side."
 coverImage: "/assets/blog/horsemen/red.jpg"
 imageCaption: "The Red Horse"
 date: "2025-09-18T05:40:07.322Z"

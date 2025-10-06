@@ -1,6 +1,6 @@
 ---
 title: "Part III: The Scale"
-excerpt: "The frantic noise of battle faded not to silence, but to an oppressive void. He fell, or perhaps merely ceased to move, landing on cracked, barren earth."
+excerpt: "The love you demanded but never truly gave. The understanding you expected but never offered. The purpose you longed for but refused to forge for yourself. The happiness you wanted others to provide, but for which you prepared no soil."
 coverImage: "/assets/blog/horsemen/black.jpg"
 imageCaption: "The Black Horse"
 date: "2025-09-19T05:35:07.322Z"

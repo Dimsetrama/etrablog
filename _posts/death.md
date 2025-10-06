@@ -1,6 +1,6 @@
 ---
 title: "Part IV: The Doorway"
-excerpt: "The profound, aching emptiness of the wasteland consumed him. He closed his eyes, welcoming the cold, desolate peace of oblivion, praying for an end to the unbearable hunger."
+excerpt: "'I wanted it to be over. I thought the nothingness was all that was left. Why am I here? Why won't you let me go?'"
 coverImage: "/assets/blog/horsemen/pale.jpg"
 imageCaption: "The Pale Horse"
 date: "2025-09-19T05:35:07.322Z"

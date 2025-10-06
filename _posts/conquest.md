@@ -1,6 +1,6 @@
 ---
 title: "Part I: The Crown"
-excerpt: "He awoke to a silence that hummed with impossible energy. He stood on the sand of a vast, white coliseum, its tiers stretching up into a bleached, featureless sky."
+excerpt: "A victory is not a victory if another has claimed it. The ultimate conquest is to set a goal that is yours and yours alone. To build a kingdom in a land no one knew existed."
 coverImage: "/assets/blog/horsemen/white.jpg"
 imageCaption: "The White Horse"
 date: "2025-09-18T05:35:07.322Z"
