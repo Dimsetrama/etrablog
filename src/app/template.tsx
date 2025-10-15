@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { ThemeSwitcher } from "./_components/theme-switcher";
 
 function ReadingProgressBar() {
   const [width, setWidth] = useState(0);
@@ -35,7 +34,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
       {/* The progress bar will now only render if it's a post page */}
       {isPostPage && <ReadingProgressBar />}
       
-      <ThemeSwitcher />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

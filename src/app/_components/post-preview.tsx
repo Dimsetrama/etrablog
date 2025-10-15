@@ -1,4 +1,7 @@
-import Link from "next/link";
+// C:\web\my-final-blog\src\app\_components\post-preview.tsx
+
+// MODIFIED: Import AnimatedLink instead of Link
+import { AnimatedLink } from "./animated-link";
 import { type Author } from "@/interfaces/author";
 import Avatar from "./avatar";
 import CoverImage from "./cover-image";
@@ -27,12 +30,13 @@ export function PostPreview({
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
-        <Link
+        {/* MODIFIED: Use AnimatedLink here */}
+        <AnimatedLink
           href={slug.startsWith("/") ? slug : `/posts/${slug}`}
           className="hover:underline"
         >
           {title}
-        </Link>
+        </AnimatedLink>
       </h3>
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />

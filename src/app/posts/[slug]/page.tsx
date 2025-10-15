@@ -1,9 +1,6 @@
-import { Metadata } from "next";
-import Link from "next/link"; // Make sure this is imported
 import { AnimatedLink } from "@/app/_components/animated-link";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
-import { CMS_NAME } from "@/lib/constants";
+import { getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
@@ -38,6 +35,7 @@ export default async function Post({ params }: Props) {
             imageCaption={post.imageCaption}
           />
           <PostBody content={content} />
+          
           {/* --- PREVIOUS / NEXT POST NAVIGATION --- */}
           {(post.previousPost || post.nextPost) && (
             <div className="max-w-2xl mx-auto mt-12 flex justify-between">
@@ -63,11 +61,23 @@ export default async function Post({ params }: Props) {
               </div>
             </div>
           )}
-          {/* --- END OF NAVIGATION --- */}
+
+          {/* --- NEW: "ALL STORIES" LINK SECTION --- */}
+          <div className="max-w-2xl mx-auto mt-24 pt-12 border-t border-neutral-200 dark:border-slate-800 text-center">
+            <AnimatedLink
+              href="/posts"
+              className="text-2xl font-bold tracking-tight hover:underline"
+            >
+              Explore All Stories
+            </AnimatedLink>
+            <p className="text-neutral-500 mt-2 italic">
+              Or return to the void.
+            </p>
+          </div>
+          
         </article>
       </Container>
     </main>
   );
 }
-
 // ... rest of the file (generateMetadata, etc.) stays the same

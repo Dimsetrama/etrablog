@@ -35,7 +35,10 @@ export function HomePageClient({ allPosts }: Props) {
     return () => clearInterval(timer);
   }, [allPosts, heroPost]); // Added heroPost to dependency array for the loop
 
-  const morePosts = allPosts.filter((post) => post.slug !== heroPost.slug);
+  // MODIFIED: Added .slice(0, 4) to limit the posts to 4
+  const morePosts = allPosts
+    .filter((post) => post.slug !== heroPost.slug)
+    .slice(0, 4);
 
   return (
     <>
