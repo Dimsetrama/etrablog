@@ -1,11 +1,16 @@
-import { AnimatedLink } from "@/app/_components/animated-link";
+// C:\web\my-final-blog\src\app\posts\[slug]\page.tsx
+
+// Make sure getAllPosts is imported from your api
+import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { notFound } from "next/navigation";
-import { getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import { AnimatedLink } from "@/app/_components/animated-link";
+// Import your new component
+import { ExploreLinkWithTrail } from "@/app/_components/explore-link-with-trail";
 
 type Props = {
   params: {
@@ -15,6 +20,9 @@ type Props = {
 
 export default async function Post({ params }: Props) {
   const post = getPostBySlug(params.slug);
+  // NEW: Fetch all posts
+  const allPosts = getAllPosts();
+
 
   if (!post) {
     return notFound();
@@ -62,18 +70,8 @@ export default async function Post({ params }: Props) {
             </div>
           )}
 
-          {/* --- NEW: "ALL STORIES" LINK SECTION --- */}
-          <div className="max-w-2xl mx-auto mt-24 pt-12 border-t border-neutral-200 dark:border-slate-800 text-center">
-            <AnimatedLink
-              href="/posts"
-              className="text-2xl font-bold tracking-tight hover:underline"
-            >
-              Explore All Stories
-            </AnimatedLink>
-            <p className="text-neutral-500 mt-2 italic">
-              Or return to the void.
-            </p>
-          </div>
+{/* MODIFIED: Replace the old div with your new component */}
+          <ExploreLinkWithTrail posts={allPosts} />
           
         </article>
       </Container>
