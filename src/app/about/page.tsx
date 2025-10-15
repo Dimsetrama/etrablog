@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostHeader } from "@/app/_components/post-header";
@@ -31,75 +30,34 @@ export default function AboutPage() {
           <div className="max-w-2xl mx-auto"> 
             <div className="prose dark:prose-invert lg:prose-xl">
 
-              <span className="text-xl italic">In order to shit fire, one must first eat glass.</span>
-              <p className="mb-8"></p>
-
               <p className="mb-8">
-                There are people who are born with names that sound like prophecies, but a name that basically translates into “young victorious sun” sounds hell of a heavy burden, isn’t it?
-                Imagine being named after the eternal source of light, then spending your twenties arguing with yourself about whether matcha tastes like grass.
+                Reads Nietzsche once, still can’t spell his name. Visits 4chan to witness democracy’s final form (retarded), then hops to Reddit for the daily sermon on moral superiority (circlejerk). Both sides equally schizophrenic, but it’s cheaper than therapy.
               </p>
 
               <p className="mb-8">
-                He is the kind of person who takes the tragicomedy of life very seriously. When he cuts down his body fat, it’s not just about looking sharper in the mirror; it’s about slicing away the unnecessary illusions of comfort, burning them off like calories.
-                The prick who will train to failure and then write an autistic caption about failure like it was preordained by the gods of schizophrenic anarchist. If Camus told us to imagine Sisyphus happy, this guy would probably reply, "Sisyphus would post gym pics too."
-              </p>
-
-              {/* Your middle image goes here (still within the narrower text column) */}
-              <Image
-                src="/assets/blog/about/i-said-stop-looking.jpg"
-                alt=""
-                width={1300}
-                height={630}
-                className="my-8 w-full h-auto"
-              />
-
-              <p className="mb-8">
-                The gym is nothing more than a cathedral of overcompensation, iron plates clanging like church bells announcing the gospel of inadequacy. 
-                Every rep is less about muscle and more about masking the invisible fractures of his life, bench-pressing the weight of unmet expectations and unreached childhood dreams. 
+               Goes to the gym to fix confidence issues. Didn’t work, but at least the lighting’s good. Muscle mass remains theoretical.
               </p>
 
               <p className="mb-8">
-                Call it therapy, call it vanity, call it a ritual of pretending that biceps can substitute for emotional stability. 
-                After all, some people go to confession, others chase enlightenment. He just deadlifts until his spine negotiates a truce with gravity.
-              </p>
-
-              {/* <Image
-                src="/assets/blog/about/ur-weird-man.jpg"
-                alt=""
-                width={1300}
-                height={630}
-                className="my-8 w-full h-auto"
-              /> */}
-
-              <p className="mb-8">
-                And then there's the matter of faith, or the absence of it. That guy, in a way, is devout in his atheism. Rationality is practically his version of a substitute, a place where one stops and thinks, "Should we really bow to Him?".
-                If he is proven wrong, however, if a Creator exists, he'll shrug and say that perhaps no one ever considers the possibility that maybe God doesn't believe in us.
+                Economically somewhere between Austrian school and delusion. Too much Mises, not enough money. Probably the only atheist who evangelizes harder than a priest.
               </p>
 
               <p className="mb-8">
-                But maybe that's the beauty of it. For all the laughter and undiagnosed autism, he is still profoundly human.
-                Doubts, desires, and delusions. Plays hard games with harder lives, still looking for the small victories. His curse isn't that he doesn't
-                believe in God, it's that he still believes in people, against better judgment.
+                Claims to say the N-word only in rap songs, proudly cites a friend who once met a Black guy as legal precedent. Romantic in theory, emotionally unavailable in practice. Dreaming of love, doing absolutely nothing about it.
               </p>
 
+              <p className="mb-8">
+               Terrified of worms and geckos, but argues with strangers about liberty and the gold standard like life depends on it.
+              </p>
+
+              <p className="mb-8">
+               A man of contradictions: preaches logic, lives on impulse. Thinks he’s rational, just severely sleep-deprived.
+              </p>
               <p className="mb-8">
                 A real human being.
               </p>
             </div>
           </div>
-          
-          {/* THIS IS THE MOVED BOTTOM IMAGE */}
-          {/* It's now outside the max-w-2xl div, but still within the <article> */}
-          <div className="mt-8"> {/* Added margin top for spacing */}
-            <Image
-              src="/assets/blog/about/fine-if-u-insist.jpg"
-              alt=""
-              width={1300}
-              height={630}
-              className="w-full h-auto" // This will now stretch to the Container's width
-            />
-          </div>
-
         </article>
       </Container>
     </main>

@@ -77,7 +77,7 @@ export function HomePageClient({ allPosts }: Props) {
               picture: "/assets/blog/authors/me.jpg",
             }}
             slug="/about"
-            excerpt="If Nietzsche had Wi-Fi and a gym membership."
+            excerpt="One bad day away from starting a podcast."
           />
         </div>
       </section>
